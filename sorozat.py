@@ -24,6 +24,7 @@ import random
 
 def dobasok():
     lista=[]
+    print("\t", end="")
     for i in range(0, 7, 1):
         dobas=random.randint(0,1)
         lista.append(dobas)
@@ -49,9 +50,9 @@ def fejek_szama(lista):
     return szamlalo
 
 def konzol_kiir(szamlalo):
-    print(f"A fejek száma: {szamlalo}")
+    print(f"\tA fejek száma: {szamlalo}")
 
 def file_kiir(szamlalo):
     fajl=open("fejek.txt", "w", encoding="utf-8")
-    fajl.write(f"A fejek száma: {szamlalo}")
+    fajl.write(f"II/F:\tA fejek száma: {szamlalo}")
     fajl.close()

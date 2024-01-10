@@ -14,12 +14,12 @@ Amennyiben ismeretlen a játékosunk szerepköre, 8 életereje van. (4p)
 """
 
 def bekeres():
-    jatekos:str= str(input("Játékos neve: "))
-    szerepkor:str= str(input("szerepkör: "))
+    jatekos:str= str(input("\tJátékos neve: "))
+    szerepkor:str= str(input("\tszerepkör: "))
     print("I/B:")
     if szerepkor=="varázsló":
-        print("Üdvözlünk Gandalf, 2 életed van!")
+        print("\tÜdvözlünk Gandalf, 2 életed van!")
     elif szerepkor=="harcos":
-        print("Üdvözlünk harcos, 10 életed van!")
+        print("\tÜdvözlünk harcos, 10 életed van!")
     else:
-        print("Üdvözlünk, 8 életed van!")
+        print("\tÜdvözlünk, 8 életed van!")

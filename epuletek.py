@@ -54,19 +54,19 @@ def epuletek_szama(lista):
     return szamlalo
 
 def magasabb(lista):
-    gyujto:int =0
-    meret:int= 500/3.280839895
-    for i in range(0, len(lista), 1):
-        epulet_meret= float(lista[i].magassag.replace(",", "."))
-        if epulet_meret > meret:
+    gyujto=0
+    lab_meterben:int= 500/3.280839895
+    for i in range(0,len(lista),1):
+        epulet_magassag=float(lista[i].magassag.replace(",", "."))
+        if epulet_magassag > lab_meterben:
             gyujto+=1
     return gyujto
+    
+def legoregebb(lista):
+    lego_index=0
+    varosa=0
+    for i in range(0,len(lista),1):
+        if lista[lego_index].evszam < lista[i].evszam:
+            lego_index=i
+            varosa=lista[i].orszag
 
-def legoregebb_epulet(lista):
-    legoregebb=3000
-    legoregebb_index=0
-    for i in range(0, len(lista), 1):
-        if legoregebb < lista[i].evszam:
-            legoregebb=lista[i].evszam
-            legoregebb_index=i
-    return lista[legoregebb_index].orszag
