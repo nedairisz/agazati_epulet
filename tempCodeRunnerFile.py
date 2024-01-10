@@ -1,0 +1,7 @@
+print("III/A, B:")
+lista=epuletek.beolvas()
+szamlalo=epuletek.epuletek_szama(lista)
+print(f"Az épületek száma: {szamlalo}")
+print("III/C:")
+gyujto=epuletek.magasabb(lista)
+print(f"Az 555 lábnál magasabb épületek száma: {gyujto}")
