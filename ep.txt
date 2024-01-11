@@ -6,4 +6,5 @@ Centrum LIM$Varsó$Lengyelország$140$43$1989
 Avenue. 57 block$Berlin$Németország$155$43$2008
 Federation Tower: East Tower$Moszkva$Oroszország$373.7$95$2016
 Avenuelock$Berlin$Németország$15$43$2008
-Avenue. 11 block$Hamburg$Németország$155$43$1989
+Avenue. 11 block$Hamburg$Németország$155$43$2008
+Avenue. 12 block$Hamburg$Németország$156$48$1989

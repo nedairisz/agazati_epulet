@@ -18,6 +18,7 @@ print(f"\tA fejek száma: {szamlalo}")
 print()
 print()"""
 
+
 print("III/A, B:")
 lista=epuletek.beolvas()
 szamlalo=epuletek.epuletek_szama(lista)
@@ -26,5 +27,11 @@ print("III/C:")
 gyujto=epuletek.magasabb(lista)
 print(f"\tAz 555 lábnál magasabb épületek száma: {gyujto}")
 print("III/D:")
-legoregebb=epuletek.legoregebb(lista)
-print(f"\tA legöregebb épület országa: {legoregebb}")
+lego_index=epuletek.legoregebb(lista)
+print(f"\tA legöregebb épület országa: {lista[lego_index].orszag}")
+print()
+print()
+
+print("Órai")
+lte_index=epuletek.emelet(lista)
+print(f"\tA legtöbb emelettel rendelkező épület neve: {lista[lte_index].nev}, városa: {lista[lte_index].varos}")

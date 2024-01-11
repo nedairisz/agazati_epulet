@@ -27,24 +27,23 @@ III/D:
 from Epulet import Epulet
 
 def beolvas():
-    fajl=open("epulet.txt", "r", encoding="utf-8")
-    fajl.readline()
-    nyers_lista=fajl.readlines()
-    fajl.close
+    fajlom=open("ep.txt","r",encoding="utf-8")
+    fajlom.readline()
+    nyers_lista=fajlom.readlines()
+    fajlom.close()
 
     lista=[]
     for i in range(0, len(nyers_lista), 1):
         sorok=nyers_lista[i]
-        egy_sor=sorok.strip().split("$")
-        nev:str=(egy_sor[0])
-        varos:str=(egy_sor[1])
-        orszag:str=(egy_sor[2])
-        magassag:int=(egy_sor[3])
-        emelet:int=(egy_sor[4])
-        evszam:int=(egy_sor[5])
+        sor_tag=sorok.strip().split("$")
+        nev:str=(sor_tag[0])
+        varos:str=(sor_tag[1])
+        orszag:str=(sor_tag[2])    
+        magassag:float=float(sor_tag[3])
+        emelet:int=int(sor_tag[4])
+        evszam:int=int(sor_tag[5])
         epulet=Epulet(nev, varos, orszag, magassag, emelet, evszam)
         lista.append(epulet)
-
     return lista
 
 def epuletek_szama(lista):
@@ -57,16 +56,32 @@ def magasabb(lista):
     gyujto=0
     lab_meterben:int= 500/3.280839895
     for i in range(0,len(lista),1):
+        if lista[i].magassag > lab_meterben:
+            gyujto+=1
+    return gyujto
+
+"""
+def magasabb(lista):
+    gyujto=0
+    lab_meterben:int= 500/3.280839895
+    for i in range(0,len(lista),1):
         epulet_magassag=float(lista[i].magassag.replace(",", "."))
         if epulet_magassag > lab_meterben:
             gyujto+=1
-    return gyujto
-    
+    return gyujto"""
+
+
 def legoregebb(lista):
     lego_index=0
-    varosa=0
     for i in range(0,len(lista),1):
-        if lista[lego_index].evszam < lista[i].evszam:
+        if lista[lego_index].evszam >= lista[i].evszam:
             lego_index=i
-            varosa=lista[i].orszag
+    return lego_index
 
+#A legtöbb emelettel rendelkező épület neve és városa
+def emelet(lista):
+    lte_index=0
+    for i in range(0, len(lista), 1):
+        if lista[lte_index].emelet < lista[i].emelet:
+            lte_index=i
+    return lte_index
